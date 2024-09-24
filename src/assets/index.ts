@@ -1,1 +1,2 @@
-export { default as logo } from "../assets/eatease_logo.svg";
+export { default as logo } from "./eatease_logo.svg";
+export { default as liman } from "./liman.png";

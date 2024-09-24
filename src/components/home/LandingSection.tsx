@@ -1,3 +1,5 @@
+import "./Home.css";
+
 type LandingSectionProps = {
   t: (value: string) => string;
 };
