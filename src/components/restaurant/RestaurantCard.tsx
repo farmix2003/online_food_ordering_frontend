@@ -5,7 +5,7 @@ import TextContent from "./TextContent";
 const RestaurantCard = () => {
   const isOpen = false;
   return (
-    <Card className=" w-[17.5rem]">
+    <Card className=" w-full md:w-[16rem] lg:w-[17.5rem]">
       <ImageCard isOpen={isOpen} />
       <TextContent />
     </Card>

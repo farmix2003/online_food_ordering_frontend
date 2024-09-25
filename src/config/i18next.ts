@@ -13,6 +13,7 @@ i18next.use(initReactI18next).init({
         homeMsg:
           "Discover the best local food from your favorite restaurants and cafes. Book your meals and enjoy free delivery.",
         topMeals: "Top Meals",
+        restaurantsMsg: "Order Foods From Our Handepicked Favourites",
       },
     },
     tr: {
@@ -20,6 +21,7 @@ i18next.use(initReactI18next).init({
         homeMsg:
           "Favori restoranlar ve cafelerimizdeki en iyi yerel yiyecekleri keşfet ve sipariş verin. Hemen siparişlerinizin ücretsiz teslimati elde edin.",
         topMeals: "Yerel yiyecekler",
+        restaurantsMsg: "Yerel Yiyeceklerimizde Sipariş Ver",
       },
     },
   },

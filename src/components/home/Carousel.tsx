@@ -18,7 +18,42 @@ const Carousel: React.FC<CarouselProps> = ({ t }) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 740,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 427,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+
   return (
     <section className="w-[100%] p-10 lg:py-10 lg:px-20">
       <p className="text-2xl font-semibold text-gray-300 py-3 pb-10">

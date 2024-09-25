@@ -13,7 +13,7 @@ const Home: React.FC<I18nSettings> = ({ t }) => {
     <div className="flex flex-col items-center justify-center gap-y-3">
       <LandingSection t={t} />
       <Carousel t={t} />
-      <Restaurants />
+      <Restaurants t={t} />
     </div>
   );
 };
