@@ -1,12 +1,49 @@
 import { CalendarMonth, LocationOn } from "@mui/icons-material";
-import { Grid2 } from "@mui/material";
+import {
+  Divider,
+  FormControl,
+  FormControlLabel,
+  Grid2,
+  Radio,
+  RadioGroup,
+  Typography,
+} from "@mui/material";
+import { useState } from "react";
+
+const categories = [
+  "Meat",
+  "Doner",
+  "Desert",
+  "Salat",
+  "Pizza",
+  "Burger",
+  "Kombo",
+  "Soup",
+  "Drinks",
+  "Other",
+];
 
 const RestaurantDetails = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [showAllCategories, setShowAllCategories] = useState<boolean>(false);
+
+  const handleCategoryChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedCategory(event.target.value);
+  };
+
+  const toggleCategoryList = () => {
+    setShowAllCategories((prev) => !prev);
+  };
+
+  const displayedCategories = showAllCategories
+    ? categories
+    : categories.slice(0, 4);
+
   return (
     <div className="px-5 lg:px-20">
       <section>
         <h3 className="text-gray-500 py-3 mt-10">
-          Home{">"}Lefke{">"}Liman Pizza
+          Home {">"} Lefke {">"} Liman Pizza
         </h3>
         <div className="">
           <Grid2 container spacing={2}>
@@ -40,10 +77,49 @@ const RestaurantDetails = () => {
           </div>
           <div className="flex gap-1">
             <CalendarMonth />
-            {/* <span className="mx-2">|</span> */}
             <span>Open from 10:00 AM to 22:00 PM</span>
           </div>
         </div>
+      </section>
+      <Divider />
+      <section className="pt-[2rem] lg:flex relative">
+        <div className="space-y-10 lg:w-[20%] filter">
+          <div className="box space-y-5 lg:sticky top-28">
+            <div>
+              <Typography variant="h5" sx={{ paddingBottom: "1rem" }}>
+                Categories
+              </Typography>
+
+              <FormControl className="py-10 space-y-5" component={"fieldset"}>
+                <RadioGroup
+                  onChange={handleCategoryChange}
+                  name="food_category"
+                  value={selectedCategory}
+                >
+                  {displayedCategories.map((category) => (
+                    <FormControlLabel
+                      value={category}
+                      control={<Radio />}
+                      label={category}
+                      key={category}
+                    />
+                  ))}
+                </RadioGroup>
+
+                {/* Toggle Button for "Show all" / "Show less" */}
+                <div className="m-0">
+                  <button
+                    onClick={toggleCategoryList}
+                    className="text-blue-500 hover:underline"
+                  >
+                    {showAllCategories ? "Show less" : "Show all"}
+                  </button>
+                </div>
+              </FormControl>
+            </div>
+          </div>
+        </div>
+        <div className="space-y-5 lg:w-[80%] lg:pl-10">menu</div>
       </section>
     </div>
   );
