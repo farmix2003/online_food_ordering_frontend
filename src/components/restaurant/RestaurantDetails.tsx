@@ -2,9 +2,10 @@ import { Divider } from "@mui/material";
 import { useState } from "react";
 import CategoryAndMenu from "./CategoryAndMenu";
 import DetailsCard from "./DetailsCard";
+import Menu from "./Menu";
 
 const categories = [
-  "Meat",
+  "Kebab",
   "Doner",
   "Desert",
   "Salat",
@@ -45,7 +46,9 @@ const RestaurantDetails = () => {
           displayedCategories={displayedCategories}
           handleCategoryChange={handleCategoryChange}
         />
-        <div className="space-y-5 lg:w-[80%] lg:pl-10">menu</div>
+        <div className="space-y-5 lg:w-[80%] lg:pl-10">
+          <Menu />
+        </div>
       </section>
     </div>
   );
