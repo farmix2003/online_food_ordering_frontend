@@ -9,7 +9,7 @@ const RestaurantDetailsImgCard = ({ src }: ImgProps) => {
     <div className="my-4">
       <Grid2 container spacing={2}>
         <Grid2>
-          <img className="w-screen h-[40vh] " src={src} alt="img" />
+          <img className="w-screen md:h-[40vh] " src={src} alt="img" />
         </Grid2>
       </Grid2>
     </div>

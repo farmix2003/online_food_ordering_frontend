@@ -25,13 +25,15 @@ const CategoryAndMenu: React.FC<Props> = ({
           <Typography variant="h5" sx={{ paddingBottom: "1rem" }}>
             Categories
           </Typography>
-          <FoodCategories
-            handleCategoryChange={handleCategoryChange}
-            selectedCategory={selectedCategory}
-            toggleCategoryList={toggleCategoryList}
-            showAllCategories={showAllCategories}
-            displayedCategories={displayedCategories}
-          />
+          <div className="flex">
+            <FoodCategories
+              handleCategoryChange={handleCategoryChange}
+              selectedCategory={selectedCategory}
+              toggleCategoryList={toggleCategoryList}
+              showAllCategories={showAllCategories}
+              displayedCategories={displayedCategories}
+            />
+          </div>
         </div>
       </div>
     </div>

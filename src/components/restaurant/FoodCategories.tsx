@@ -29,20 +29,25 @@ const FoodCategories: React.FC<ToggleFilterProps> = ({
         name="food_category"
         value={selectedCategory}
       >
-        {displayedCategories.map((category) => (
-          <FormControlLabel
-            value={category}
-            control={<Radio />}
-            label={category}
-            key={category}
-          />
-        ))}
+        <div className="sm:flex w-full items-center justify-between flex-wrap md:flex-col md:justify-start md:items-start">
+          {displayedCategories.map((category) => (
+            <FormControlLabel
+              value={category}
+              control={<Radio />}
+              label={category}
+              key={category}
+              className="w-[30%]"
+            />
+          ))}
+        </div>
       </RadioGroup>
 
+      {/* <div className="hidden md:inline"> */}
       <ToggleFilter
         showAllCategories={showAllCategories}
         toggleCategoryList={toggleCategoryList}
       />
+      {/* </div> */}
     </FormControl>
   );
 };
