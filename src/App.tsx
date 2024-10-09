@@ -3,6 +3,7 @@ import { darkTheme } from "./theme/DarkTheme";
 import { Home, Navbar } from "./components";
 import { useTranslation } from "react-i18next";
 import RestaurantDetails from "./components/restaurant/RestaurantDetails";
+import Cart from "./components/cart/Cart";
 
 const App = () => {
   const { t, i18n } = useTranslation();
@@ -17,7 +18,8 @@ const App = () => {
         <CssBaseline />
         <Navbar i18n={i18n} languages={languages} />
         {/* <Home t={t} /> */}
-        <RestaurantDetails />
+        {/* <RestaurantDetails /> */}
+        <Cart />
       </ThemeProvider>
     </div>
   );
